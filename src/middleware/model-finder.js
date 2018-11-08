@@ -2,9 +2,11 @@
 
 import requireDirectory from 'require-directory';
 
-const whitelist = /.*?model.js$/; // Only index *model.js files
-const renamer = (name) => name.replace(/(.*?\-)model/g, 'model'); // make them all named "model"
-const models = requireDirectory(module, '../models', {rename:renamer, include: whitelist});
+// const whitelist = /.*?model.js$/; // Only index *model.js files
+// const renamer = (name) => name.replace(/(.*?\-)model/g, 'model'); // make them all named "model"
+// const models = requireDirectory(module, '../models', {rename:renamer, include: whitelist});
+
+const models = requireDirectory(module, '../models', {recurse: false});
 
 /*
 models object:

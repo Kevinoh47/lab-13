@@ -12,7 +12,7 @@ import path from 'path';
 import errorHandler from './middleware/error.js';
 import notFound from './middleware/404.js';
 import apiRouter from './api/v1.js';
-import authRouter from './auth/router.js';
+import authRouter from './auth/router.js'; // TODO app.js would also get auth/middleware.js which has been imported by ./auth/router.js???
 
 // Prepare the express app
 const app = express();

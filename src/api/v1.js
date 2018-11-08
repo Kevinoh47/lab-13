@@ -4,6 +4,10 @@ import express from 'express';
 
 import modelFinder from '../middleware/model-finder.js';
 
+
+// TODO does v1.js import /auth/router.js? If so, then it maybe would bring in auth/middleware with it? OR DOES ALL THIS COME IN VIA app.js?
+//import auth from '../auth/middleware.js'; // TODO added ...
+
 const router = express.Router();
 
 let sendJSON = (data,response) => {
@@ -15,6 +19,16 @@ let sendJSON = (data,response) => {
 };
 
 router.param('model', modelFinder);
+
+// TODO test route for testing auth middleware
+// router.get('/', auth,  (request, response) => {
+//   response.send(`test route here...`);
+// });
+
+// TODO adding auth to the schema route per lab instructions...
+// router.get('/api/v1/:model/schema', auth, (request, response) => {
+//   sendJSON(request.model.jsonSchema(), response);
+// });
 
 router.get('/api/v1/:model/schema', (request, response) => {
   sendJSON(request.model.jsonSchema(), response);

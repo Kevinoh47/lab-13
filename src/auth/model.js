@@ -2,6 +2,8 @@
 
 import mongoose from 'mongoose';
 
+//import jwt from 'jasonwebtoken';  // TODO confirm this is needed??? see line 37
+
 const userSchema = new mongoose.Schema({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
