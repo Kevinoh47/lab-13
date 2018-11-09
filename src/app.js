@@ -34,7 +34,7 @@ app.use(express.urlencoded({extended:true}));
 // });
 
 app.use(authRouter);
-app.use(apiRouter);
+app.use(apiRouter); 
 
 // Catchalls
 app.use(notFound);

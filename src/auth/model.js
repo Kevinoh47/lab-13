@@ -2,11 +2,11 @@
 
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';  // TODO added
+import jwt from 'jsonwebtoken';
 
 const userSchema = new mongoose.Schema({
-  username: {type: String, require: true, unique: true}, // TODO changed required to require
-  password: {type: String, require: true}, // TODO changed required to require 
+  username: {type: String, require: true, unique: true},
+  password: {type: String, require: true},
   email: {type: String}
 });
 
@@ -29,22 +29,30 @@ userSchema.pre('save', function(next) {
 userSchema.statics.authenticateBasic = function(auth) {
   let query = {username:auth.username};
   return this.findOne(query)
-    .then(user => user && user.comparePassword(auth.password))
+    .then(user => {
+      if(user && user.comparePassword(auth.password)) {
+        return user;
+      }})
     .catch(error => error);
 };
 
   userSchema.statics.authenticateToken = function(token) {
-  let parsedToken = jwt.verify(token, process.env.SECRET || 'changeme') // TODO added
+  let parsedToken = jwt.verify(token, process.env.SECRET || 'changeme');
   let query = {_id:parsedToken.id};
   return this.findOne(query)
-    .then(user => user) // TODO changed 
+    .then(
+      user => {
+        return user;
+      }) 
     .catch(error => error);
 };
 
 // Compare a plain text password against the hashed one we have saved
 userSchema.methods.comparePassword = function(password) {
   return bcrypt.compare(password, this.password)
-  .then( valid => valid ? valid: null); // TODO see Basic Auth video ~ 1:08:00
+  .then( valid => {
+    return valid ? valid: null;
+    });
 };
 
 // Generate a JWT from the user id and a secret

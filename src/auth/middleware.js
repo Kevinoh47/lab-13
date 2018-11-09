@@ -26,7 +26,7 @@ export default (req, res, next) => {
     }
     // BEARER Auth
     else if(authHeader.match(/bearer/i)) {
-      let token = authHeader.replace(/bearer\s+/,'');
+      let token = authHeader.replace(/Bearer\s+/,'');
       // Send the bearer token to the model to authenticate the user
       User.authenticateToken(token)
         .then(user=>_authenticateUser(user))
@@ -42,8 +42,8 @@ export default (req, res, next) => {
     if(!user) { _authError(); }
     else {
       // Send the user and token back to the request
-      req.user = user; // TODO this was missing
-      req.token = user.generateToken(); // TODO this was missing
+      req.user = user;
+      req.token = user.generateToken();
       next();
     }
   }

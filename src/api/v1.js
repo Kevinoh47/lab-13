@@ -17,9 +17,9 @@ let sendJSON = (data,response) => {
 router.param('model', modelFinder);
 
 // TODO test route for testing auth middleware
-// router.get('/', auth,  (request, response) => {
-//   response.send(`test route here...`);
-// });
+router.get('/', auth,  (request, response) => {
+  response.send(`test route here...`);
+});
 
 // TODO adding auth to the schema route per lab instructions.
 router.get('/api/v1/:model/schema', auth, (request, response) => {
