@@ -1,5 +1,11 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB - TOPIC
 =================================================
+# Travis
+[![Build Status](https://travis-ci.com/Kevinoh47/lab-13.svg?branch=working13)](https://travis-ci.com/Kevinoh47/lab-13)
+
+# Heroku
+https://codefellows-401-lab13.herokuapp.com/
+
 
 
 ## Before you begin

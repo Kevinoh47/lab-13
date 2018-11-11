@@ -12,7 +12,7 @@ import path from 'path';
 import errorHandler from './middleware/error.js';
 import notFound from './middleware/404.js';
 import apiRouter from './api/v1.js';
-import authRouter from './auth/router.js';
+import authRouter from './auth/router.js'; 
 
 // Prepare the express app
 const app = express();
@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended:true}));
 
 // Routes
 app.use(authRouter);
-app.use(apiRouter);
+app.use(apiRouter); 
 
 // Catchalls
 app.use(notFound);

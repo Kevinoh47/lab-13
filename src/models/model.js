@@ -37,7 +37,6 @@ class Model {
   }
 
   patch(id, data) {
-    console.log("Model patch");
     return this.storage.find({_id:id})
       .then(instance => {
         instance = Object.assign(instance[0],data);
