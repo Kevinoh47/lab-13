@@ -1,10 +1,22 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB - TOPIC
 =================================================
 ## Travis
+Please note that tests are timing out on travis but they should be passing. 
+
 [![Build Status](https://travis-ci.com/Kevinoh47/lab-13.svg?branch=working13)](https://travis-ci.com/Kevinoh47/lab-13)
 
 ## Heroku
+https://codefellows-401-lab13.herokuapp.com/api/v1/teams
+https://codefellows-401-lab13.herokuapp.com/api/v1/players
+https://codefellows-401-lab13.herokuapp.com/api/v1/articles
+
+protected routes:
 https://codefellows-401-lab13.herokuapp.com/
+https://codefellows-401-lab13.herokuapp.com/api/v1/:model/schema
+
+signup: 
+https://codefellows-401-lab13.herokuapp.com/signup
+
 
 
 ## Code Paths
