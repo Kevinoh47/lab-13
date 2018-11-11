@@ -10,6 +10,7 @@ let mongoServer;
 
 // Unmock our model (might have been mocked by a previous test)
 jest.unmock('require-directory');
+jest.setTimeout(30000);
 
 // Mock Server
 const {server} = require('../../src/app.js');
