@@ -1,12 +1,14 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB - TOPIC
 =================================================
-# Travis
+## Travis
 [![Build Status](https://travis-ci.com/Kevinoh47/lab-13.svg?branch=working13)](https://travis-ci.com/Kevinoh47/lab-13)
 
-# Heroku
+## Heroku
 https://codefellows-401-lab13.herokuapp.com/
 
 
+## Code Paths
+![](lab-13-auth-code-path-diagram.jpg)
 
 ## Before you begin
 * You'll need to initialize this lab folder as a new node module, install your dependencies, setup your npm script commands, and pull in your config files
