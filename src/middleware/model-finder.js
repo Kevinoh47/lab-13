@@ -16,7 +16,7 @@ models object:
  */
 
 export default (req,res,next) => {
-  
+
   let model = req.params.model;
   try {
     req.model = models[model].model.default;

@@ -50,9 +50,6 @@ userSchema.statics.authenticateBasic = function(auth) {
 // Compare a plain text password against the hashed one we have saved
 userSchema.methods.comparePassword = function(password) {
   return bcrypt.compare(password, this.password)
-  .then( valid => {
-    return valid ? valid: null;
-    });
 };
 
 // Generate a JWT from the user id and a secret

@@ -13,7 +13,7 @@ export default (req, res, next) => {
     if(authHeader.match(/basic/i)) {
 
       // Create a {user:password} object to send into the model to authenticate the user
-      let base64Header = authHeader.replace(/Basic\s+/,'');
+      let base64Header = authHeader.replace(/Basic\s+/i,'');
       let base64Buffer = Buffer.from(base64Header, 'base64');
       let bufferString = base64Buffer.toString();
       let [username,password] = bufferString.split(':');
@@ -26,7 +26,7 @@ export default (req, res, next) => {
     }
     // BEARER Auth
     else if(authHeader.match(/bearer/i)) {
-      let token = authHeader.replace(/Bearer\s+/,'');
+      let token = authHeader.replace(/Bearer\s+/i,'');
       // Send the bearer token to the model to authenticate the user
       User.authenticateToken(token)
         .then(user=>_authenticateUser(user))
